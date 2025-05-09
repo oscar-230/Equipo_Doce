@@ -33,6 +33,12 @@
 
         <activity android:name=".ui.nuevacita.NuevaCitaActivity" />
 
+        <activity
+            android:name=".ui.detallecita.DetalleCitaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DogApp" />
+
+
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.univalle.dogapp.data.local.AppDatabase
 import com.univalle.dogapp.data.local.CitaEntity
 import com.univalle.dogapp.databinding.ActivityHomeBinding
+import com.univalle.dogapp.ui.detallecita.DetalleCitaActivity
 import com.univalle.dogapp.ui.nuevacita.NuevaCitaActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,7 +25,9 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         adapter = CitaAdapter(emptyList()) { cita ->
-            // Aquí irá luego navegación al detalle (HU 4.0)
+            val intent = Intent(this, DetalleCitaActivity::class.java)
+            intent.putExtra("CITA_ID", cita.id)
+            startActivity(intent)
         }
 
         binding.rvAppointments.layoutManager = LinearLayoutManager(this)
