@@ -25,6 +25,9 @@ class HomeActivity : AppCompatActivity() {
 
         adapter = CitaAdapter(emptyList()) { cita ->
             // Aquí irá luego navegación al detalle (HU 4.0)
+            val intent = Intent(this, DetalleCitaActivity::class.java)
+            intent.putExtra("cita_id", cita.id)
+            startActivity(intent)
         }
 
         binding.rvAppointments.layoutManager = LinearLayoutManager(this)

@@ -11,4 +11,10 @@ interface CitaDao {
 
     @Query("SELECT * FROM citas ORDER BY id DESC")
     suspend fun obtenerCitas(): List<CitaEntity>
+
+    @Query("SELECT * FROM citas WHERE id = :citaId")
+    suspend fun obtenerCitaPorId(citaId: Int): CitaEntity?
+
+    @Query("DELETE FROM citas WHERE id = :citaId")
+    suspend fun eliminarCita(citaId: Int)
 }
