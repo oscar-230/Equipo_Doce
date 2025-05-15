@@ -3,6 +3,7 @@ package com.univalle.dogapp.data.local
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.univalle.dogapp.model.Cita
 
 @Dao
@@ -19,4 +20,6 @@ interface CitaDao {
     @Query("DELETE FROM citas WHERE id = :id")
     suspend fun eliminarCitaPorId(id: Int)
 
+    @Update
+    suspend fun actualizarCita(cita: Cita)
 }
