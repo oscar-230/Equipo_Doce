@@ -38,6 +38,10 @@
             android:exported="false"
             android:theme="@style/Theme.DogApp" />
 
+        <activity
+            android:name=".view.activity.EditarCitaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DogApp" />
 
     </application>
 

@@ -1,5 +1,6 @@
 package com.univalle.dogapp.view.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -52,13 +53,21 @@ class DetalleCitaActivity : AppCompatActivity() {
         }
 
         binding.fabEliminar.setOnClickListener {
-            viewModel.eliminarCita(citaId) {
-                Toast.makeText(this, "Cita eliminada", Toast.LENGTH_SHORT).show()
-                finish()
+            if (citaId != -1) {
+                viewModel.eliminarCita(citaId) {
+                    Toast.makeText(this, "Cita eliminada", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
             }
         }
 
-        // Nota: el botón fabEditar queda sin funcionalidad por ahora (HU 5.0)
+        binding.fabEditar.setOnClickListener {
+            if (citaId != -1) {
+                val intent = Intent(this, EditarCitaActivity::class.java)
+                intent.putExtra("CITA_ID", citaId)
+                startActivity(intent)
+            }
+        }
     }
 
     private fun observarCita() {

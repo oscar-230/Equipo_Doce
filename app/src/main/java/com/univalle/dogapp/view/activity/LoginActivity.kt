@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.airbnb.lottie.LottieAnimationView
+import com.google.android.material.button.MaterialButton
 import com.univalle.dogapp.R
 import java.util.concurrent.Executor
 import android.content.Intent
-
 
 class LoginActivity : AppCompatActivity() {
 
@@ -17,22 +17,21 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var promptInfo: BiometricPrompt.PromptInfo
     private lateinit var executor: Executor
     private lateinit var lottieFingerprint: LottieAnimationView
+    private lateinit var btnLogin: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         lottieFingerprint = findViewById(R.id.lottieFingerprint)
+        btnLogin = findViewById(R.id.btnLogin)
 
         executor = ContextCompat.getMainExecutor(this)
         biometricPrompt = BiometricPrompt(this, executor,
             object : BiometricPrompt.AuthenticationCallback() {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
-                    Toast.makeText(applicationContext, "¡Autenticación exitosa!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    navigateToHome()
                 }
 
                 override fun onAuthenticationFailed() {
@@ -50,5 +49,16 @@ class LoginActivity : AppCompatActivity() {
         lottieFingerprint.setOnClickListener {
             biometricPrompt.authenticate(promptInfo)
         }
+
+        btnLogin.setOnClickListener {
+            navigateToHome()
+        }
+    }
+
+    private fun navigateToHome() {
+        Toast.makeText(applicationContext, "¡Autenticación exitosa!", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
