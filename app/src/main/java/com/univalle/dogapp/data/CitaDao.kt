@@ -1,4 +1,4 @@
-package com.univalle.dogapp.data.local
+package com.univalle.dogapp.data
 
 import androidx.room.Dao
 import androidx.room.Insert

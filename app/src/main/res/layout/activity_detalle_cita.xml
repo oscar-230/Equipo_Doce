@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="92dp"
         android:background="@drawable/shape_toolbar"
         app:layout_constraintTop_toTopOf="parent">
 

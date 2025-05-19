@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.squareup.picasso.Picasso
-import com.univalle.dogapp.data.local.AppDatabase
+import com.univalle.dogapp.data.AppDatabase
 import com.univalle.dogapp.databinding.ActivityDetalleCitaBinding
 import com.univalle.dogapp.repository.CitaRepository
 import com.univalle.dogapp.viewmodel.DetalleCitaViewModel
