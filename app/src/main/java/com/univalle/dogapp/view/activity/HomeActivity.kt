@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.univalle.dogapp.data.local.AppDatabase
+import com.univalle.dogapp.data.AppDatabase
 import com.univalle.dogapp.databinding.ActivityHomeBinding
 import com.univalle.dogapp.repository.CitaRepository
 import com.univalle.dogapp.view.adapter.CitaAdapter

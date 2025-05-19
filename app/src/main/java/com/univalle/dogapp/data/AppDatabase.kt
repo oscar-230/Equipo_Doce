@@ -1,4 +1,4 @@
-package com.univalle.dogapp.data.local
+package com.univalle.dogapp.data
 
 import android.content.Context
 import androidx.room.Database

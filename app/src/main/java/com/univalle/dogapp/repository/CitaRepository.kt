@@ -1,6 +1,6 @@
 package com.univalle.dogapp.repository
 
-import com.univalle.dogapp.data.local.AppDatabase
+import com.univalle.dogapp.data.AppDatabase
 import com.univalle.dogapp.model.Cita
 
 class CitaRepository(private val db: AppDatabase) {

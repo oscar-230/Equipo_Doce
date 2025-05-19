@@ -8,10 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
-import com.univalle.dogapp.R
-import com.univalle.dogapp.data.local.AppDatabase
+import com.univalle.dogapp.data.AppDatabase
 import com.univalle.dogapp.databinding.ActivityEditarCitaBinding
 import com.univalle.dogapp.model.Cita
 import com.univalle.dogapp.repository.CitaRepository

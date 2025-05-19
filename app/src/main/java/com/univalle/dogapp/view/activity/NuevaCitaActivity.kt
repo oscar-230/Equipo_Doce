@@ -16,7 +16,7 @@ import com.univalle.dogapp.service.ApiUtils
 import com.univalle.dogapp.viewmodel.NuevaCitaViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import com.univalle.dogapp.data.local.AppDatabase
+import com.univalle.dogapp.data.AppDatabase
 
 class NuevaCitaActivity : AppCompatActivity() {
 
@@ -93,6 +93,12 @@ class NuevaCitaActivity : AppCompatActivity() {
     private fun cargarSintomas() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, sintomasList)
         binding.spinnerSintomas.setAdapter(adapter)
+
+        binding.spinnerSintomas.inputType = android.text.InputType.TYPE_NULL
+        binding.spinnerSintomas.keyListener = null
+        binding.spinnerSintomas.setOnClickListener {
+            binding.spinnerSintomas.showDropDown()
+        }
     }
 
     private fun observarViewModel() {
