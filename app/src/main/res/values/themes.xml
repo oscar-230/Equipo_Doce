@@ -6,4 +6,10 @@
         <!-- Personaliza aquí si quieres más adelante -->
     </style>
 
+    <!-- Estilo personalizado para TextInputLayout -->
+    <style name="MyTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/hint_color</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+    </style>
+
 </resources>
