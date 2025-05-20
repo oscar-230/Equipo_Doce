@@ -49,7 +49,7 @@ class DetalleCitaActivity : AppCompatActivity() {
 
     private fun setupListeners() {
         binding.ivBack.setOnClickListener {
-            finish()
+            onBackPressed()
         }
 
         binding.fabEliminar.setOnClickListener {
