@@ -14,22 +14,24 @@
         android:padding="8dp">
 
         <!-- Imagen -->
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivMascota"
             android:layout_width="72dp"
             android:layout_height="72dp"
-            android:scaleType="centerCrop"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_image"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircularImage"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
 
         <!-- Nombre Mascota -->
         <TextView
             android:id="@+id/tvNombreMascota"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
             android:textStyle="bold"
             android:textColor="#000"
             android:textSize="16sp"
