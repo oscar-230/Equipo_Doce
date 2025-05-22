@@ -36,7 +36,8 @@ class HomeActivity : AppCompatActivity() {
         binding.rvAppointments.adapter = adapter
 
         binding.fabAddAppointment.setOnClickListener {
-            startActivity(Intent(this, NuevaCitaActivity::class.java))
+            val intent = Intent(this, NuevaCitaActivity::class.java)
+            startActivity(intent)
         }
 
         lifecycleScope.launchWhenStarted {

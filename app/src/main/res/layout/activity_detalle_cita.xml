@@ -5,7 +5,7 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF4FA">
+    android:background="#FFFFFF">
 
     <!-- Toolbar personalizada -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,10 +17,10 @@
 
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="37dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_arrow_back"
             app:tint="#F05861"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,19 +31,27 @@
     <!-- Card superior con imagen -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardImagen"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_marginTop="160dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_anchor="@id/toolbarLayout"
         app:layout_anchorGravity="bottom|center_horizontal">
 
-        <ImageView
-            android:id="@+id/ivMascota"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/ivMascota"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"/>
+        </FrameLayout>
     </androidx.cardview.widget.CardView>
 
     <!-- Card inferior con datos -->
